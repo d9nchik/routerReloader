@@ -1,4 +1,6 @@
 #!/bin/bash
+
+# function returns value of package loss
 function getPackageLoss {
 	local result=$(ping -q -c 10 8.8.8.8 | sed -e '5d; 1,3d; s/%/ /' | awk '{print $6}')
 	echo $result
